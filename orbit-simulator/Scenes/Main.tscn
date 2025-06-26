@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjcdgw0jxtu17"]
+
+[ext_resource type="Script" uid="uid://cirhkp18am8q6" path="res://Scripts/Main.gd" id="1_rgh2o"]
+[ext_resource type="PackedScene" uid="uid://x7nwv8y3wtfk" path="res://Scenes/Sun.tscn" id="2_pbw6q"]
+[ext_resource type="PackedScene" uid="uid://dc1ifbg5jy8a0" path="res://Scenes/Planet.tscn" id="3_v1gob"]
+[ext_resource type="PackedScene" uid="uid://ldt7jd6q0ls3" path="res://Scenes/SimulationManager.tscn" id="4_jw32o"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_rgh2o")
+length = 250.0
+
+[node name="Sun" parent="." instance=ExtResource("2_pbw6q")]
+
+[node name="Planet" parent="." instance=ExtResource("3_v1gob")]
+
+[node name="Planet2" parent="." instance=ExtResource("3_v1gob")]
+
+[node name="SimulationManager" parent="." instance=ExtResource("4_jw32o")]
+time_scale = 40.0
