@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://x7nwv8y3wtfk"]
+[gd_scene load_steps=2 format=3 uid="uid://dqk71v1c7rxbn"]
 
-[ext_resource type="Script" uid="uid://cs7u01n3x47ab" path="res://Scripts/Sun.gd" id="1_1y2s6"]
+[ext_resource type="Script" uid="uid://b4nhcqg7alswp" path="res://Scripts/Sun.gd" id="1_x0n6q"]
 
 [node name="Sun" type="Node2D"]
-script = ExtResource("1_1y2s6")
+script = ExtResource("1_x0n6q")

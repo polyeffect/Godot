@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb3atgpljyr0h"]
+
+[ext_resource type="Script" uid="uid://bql0xloeii1wg" path="res://Scripts/Comet.gd" id="1_cbitt"]
+
+[node name="Comet" type="Node2D"]
+script = ExtResource("1_cbitt")

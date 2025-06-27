@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Orbit Simulator"
-run/main_scene="uid://bjcdgw0jxtu17"
+run/main_scene="uid://bqisxm84efmiy"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,10 +19,10 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=1000
 window/size/viewport_height=1000
-window/stretch/mode="viewport"
+window/size/resizable=false
 
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.0687983, 0.0687983, 0.0687983, 1)
+environment/defaults/default_clear_color=Color(0.0295066, 0.0295066, 0.0295065, 1)

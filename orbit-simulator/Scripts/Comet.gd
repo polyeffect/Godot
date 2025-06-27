@@ -1,12 +1,12 @@
 extends Node2D
 
-var mass:float = 10.0
+var mass:float = 2.0
 var velocity:Vector2 = Vector2.ZERO
 var acceleration:Vector2 = Vector2.ZERO
-var planet_color = Color.from_hsv(randf_range(0.5, 0.75), 1.0, 1.0)
+var planet_color = Color.from_hsv(randf_range(0.15, 0.25), 1.0, 1.0)
 
 func _ready():
-	mass = randi_range(5, 15)
+	mass = randi_range(1, 3)
 
 func _draw():
 	draw_circle(Vector2(0, 0), mass, planet_color)

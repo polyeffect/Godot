@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqisxm84efmiy"]
+[gd_scene load_steps=5 format=3 uid="uid://bqisxm84efmiy"]
 
 [ext_resource type="Script" uid="uid://b6ixshi6p8i31" path="res://Scripts/Main.gd" id="1_idj7w"]
 [ext_resource type="PackedScene" uid="uid://dqk71v1c7rxbn" path="res://Scenes/Sun.tscn" id="2_kln2b"]
 [ext_resource type="PackedScene" uid="uid://bvttmvpypq6be" path="res://Scenes/SimulationManager.tscn" id="4_pbw6q"]
-[ext_resource type="PackedScene" uid="uid://pqoero4pgkm1" path="res://Scenes/TrailManager.tscn" id="5_pbw6q"]
 [ext_resource type="Script" uid="uid://bckmkvc5d8u7l" path="res://Scripts/SimulationManager.gd" id="5_v1gob"]
 
 [node name="Main" type="Node2D"]
@@ -13,6 +12,4 @@ script = ExtResource("1_idj7w")
 
 [node name="SimulationManager" parent="." instance=ExtResource("4_pbw6q")]
 script = ExtResource("5_v1gob")
-time_scale = 20.0
-
-[node name="TrailManager" parent="." instance=ExtResource("5_pbw6q")]
+time_scale = 10.0

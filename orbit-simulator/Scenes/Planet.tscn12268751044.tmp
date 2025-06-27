@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dljs24jo3nsgk"]
+
+[ext_resource type="Script" uid="uid://bqixg6ropvr0j" path="res://Scripts/Planet.gd" id="1_effgs"]
+
+[sub_resource type="Curve" id="Curve_effgs"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 2), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Planet" type="Node2D"]
+script = ExtResource("1_effgs")
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 1.0
+width_curve = SubResource("Curve_effgs")
