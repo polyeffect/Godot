@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://csfuod1iqh80h"]
+
+[ext_resource type="Texture2D" uid="uid://cmotni04c0ori" path="res://Assets/Obstacles/Tree_M.png" id="1_eerr3"]
+[ext_resource type="Script" uid="uid://ivkxwcxdvpv7" path="res://Scripts/Obstacle.gd" id="1_pxfx4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ko7vc"]
+size = Vector2(32, 40)
+
+[node name="TreeMedium" type="Area2D"]
+script = ExtResource("1_pxfx4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_eerr3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_ko7vc")
