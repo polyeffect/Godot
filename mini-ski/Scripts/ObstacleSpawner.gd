@@ -26,7 +26,7 @@ func spawn_obstacle():
 	var obstacle = scene.instantiate()
 	obstacle.position = Vector2(
 		randf_range(spawn_x_range.x, spawn_x_range.y),
-		get_viewport_rect().size.y + 32
+		get_viewport_rect().size.y + 64
 	)
 	obstacle.scroll_speed = scroll_speed
 	add_child(obstacle)
