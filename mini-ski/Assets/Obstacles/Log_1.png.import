@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b573mf0x1b37p"
-path="res://.godot/imported/Tree_L.png-aa7b5594a343a90b77ec0f7e45aff542.ctex"
+uid="uid://8hqss85ati6l"
+path="res://.godot/imported/Log_1.png-08598d64415e5e20fc6139bcd3c2621e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Obstacles/Tree_L.png"
-dest_files=["res://.godot/imported/Tree_L.png-aa7b5594a343a90b77ec0f7e45aff542.ctex"]
+source_file="res://Assets/Obstacles/Log_1.png"
+dest_files=["res://.godot/imported/Log_1.png-08598d64415e5e20fc6139bcd3c2621e.ctex"]
 
 [params]
 

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://btrjdcx04emrj"]
+
+[ext_resource type="Script" uid="uid://ivkxwcxdvpv7" path="res://Scripts/Obstacle.gd" id="1_vfeka"]
+[ext_resource type="Texture2D" uid="uid://8hqss85ati6l" path="res://Assets/Obstacles/Log_1.png" id="2_vfeka"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ko7vc"]
+size = Vector2(36, 20)
+
+[node name="TreeLarge" type="Area2D"]
+script = ExtResource("1_vfeka")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_vfeka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_ko7vc")

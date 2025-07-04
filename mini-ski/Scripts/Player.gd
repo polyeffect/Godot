@@ -22,6 +22,7 @@ func _process(delta):
 			is_moving = true
 			last_direction = -1
 		position.x += input * SPEED * delta
+		
 	elif input > 0:
 		if !is_moving or last_direction != 1:
 			sprite.flip_h = false
@@ -29,6 +30,7 @@ func _process(delta):
 			is_moving = true
 			last_direction = 1
 		position.x += input * SPEED * delta
+		
 	else:
 		if is_moving:
 			is_moving = false

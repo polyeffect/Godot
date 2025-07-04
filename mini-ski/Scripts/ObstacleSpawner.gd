@@ -1,9 +1,11 @@
 extends Node2D
 
 const OBSTACLE_SCENES = [
-	preload("res://Scenes/Obstacles/TreeLarge.tscn"),
-	preload("res://Scenes/Obstacles/TreeMedium.tscn"),
-	preload("res://Scenes/Obstacles/TreeSmall.tscn")
+	{ scene = preload("res://Scenes/Obstacles/TreeLarge.tscn"), weight = 3 },
+	{ scene = preload("res://Scenes/Obstacles/TreeMedium.tscn"), weight = 3 },
+	{ scene = preload("res://Scenes/Obstacles/TreeSmall.tscn"), weight = 3 },
+	{ scene = preload("res://Scenes/Obstacles/Log1.tscn"), weight = 1 },
+	{ scene = preload("res://Scenes/Obstacles/Log2.tscn"), weight = 1 }
 ]
 
 @export var spawn_interval:float = 1.0
@@ -22,7 +24,7 @@ func _process(delta):
 		spawn_obstacle()
 		
 func spawn_obstacle():
-	var scene = OBSTACLE_SCENES.pick_random()
+	var scene = get_weight_obstacle()
 	var obstacle = scene.instantiate()
 	obstacle.position = Vector2(
 		randf_range(spawn_x_range.x, spawn_x_range.y),
@@ -30,3 +32,10 @@ func spawn_obstacle():
 	)
 	obstacle.scroll_speed = scroll_speed
 	add_child(obstacle)
+	
+func get_weight_obstacle():
+	var pool:Array[PackedScene] = []
+	for entry in OBSTACLE_SCENES:
+		for i in entry.weight:
+			pool.append(entry.scene)
+	return pool.pick_random()
