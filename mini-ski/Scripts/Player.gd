@@ -40,6 +40,14 @@ func _process(delta):
 			elif last_direction == 1:
 				sprite.flip_h = false
 				anim.play("move_back")
+				
+	var screen_width = get_viewport_rect().size.x
+	var sprite_width = 8
+	
+	if global_position.x > screen_width - sprite_width:
+		global_position.x = screen_width - sprite_width
+	elif global_position.x < 0 + sprite_width:
+		global_position.x = 0 + sprite_width
 	
 func _on_area_entered(area):
 	if area.is_in_group("Obstacle"):

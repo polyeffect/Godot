@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://btmk848r6nlsp"]
+[gd_scene load_steps=10 format=3 uid="uid://btmk848r6nlsp"]
 
 [ext_resource type="PackedScene" uid="uid://cjdxffbnwwxbd" path="res://Scenes/Player.tscn" id="1_idj7w"]
 [ext_resource type="Script" uid="uid://cifomxhtavawa" path="res://Scripts/ObstacleSpawner.gd" id="1_r150o"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cmnieb7u6bq5n" path="res://Assets/Snow.png" id="2_v1gob"]
 [ext_resource type="Script" uid="uid://dkk8c650a4pxx" path="res://Scripts/GameManager.gd" id="3_kln2b"]
 [ext_resource type="Script" uid="uid://bfjwc4mgi0f1e" path="res://Scripts/TrailManager.gd" id="5_pbw6q"]
+[ext_resource type="Script" uid="uid://dka6p2wabk5yx" path="res://Scripts/FPS.gd" id="7_jw32o"]
+[ext_resource type="Theme" uid="uid://bckv0mj50o16f" path="res://Theme/Main.theme" id="8_50glp"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jw32o"]
 lifetime_randomness = 0.2
@@ -19,9 +21,6 @@ scale_min = 0.5
 scale_max = 0.8
 turbulence_enabled = true
 turbulence_noise_speed = Vector3(100, 2, 0)
-
-[sub_resource type="Theme" id="Theme_v1gob"]
-Label/colors/font_color = Color(0.163861, 0.163861, 0.163861, 1)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_rgh2o")
@@ -50,6 +49,7 @@ script = ExtResource("1_r150o")
 spawn_interval = 0.1
 
 [node name="GameManager" type="Node" parent="."]
+process_mode = 3
 script = ExtResource("3_kln2b")
 
 [node name="TrailManager" type="Node" parent="."]
@@ -58,9 +58,48 @@ muffler_max_points = 20
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="ScoreLabel" type="Label" parent="UI"]
-offset_right = 60.0
+[node name="FPS" type="Label" parent="UI"]
+offset_right = 40.0
 offset_bottom = 23.0
-theme = SubResource("Theme_v1gob")
+theme_override_colors/font_color = Color(1, 0, 0.55, 1)
+script = ExtResource("7_jw32o")
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+offset_top = 30.0
+offset_right = 60.0
+offset_bottom = 53.0
+theme = ExtResource("8_50glp")
 text = "SCORE: "
 uppercase = true
+
+[node name="Start" type="Label" parent="UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = 30.0
+offset_right = 224.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_50glp")
+text = "“Press A/D or ←/→ to begin!”"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Restart" type="Label" parent="UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 30.0
+offset_right = 200.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_50glp")
+text = "“Press Space to restart.”"
