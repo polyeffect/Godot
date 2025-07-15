@@ -39,7 +39,7 @@ func _restart_game():
 	get_tree().reload_current_scene()
 	
 func _on_player_hit():
-	get_tree().paused = true
-	game_paused = true
-	restart_label.show()
+	#get_tree().paused = true
+	#game_paused = true
+	#restart_label.show()
 	print("Game Over!")

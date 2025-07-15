@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://btmk848r6nlsp"]
+[gd_scene load_steps=12 format=3 uid="uid://btmk848r6nlsp"]
 
 [ext_resource type="PackedScene" uid="uid://cjdxffbnwwxbd" path="res://Scenes/Player.tscn" id="1_idj7w"]
 [ext_resource type="Script" uid="uid://cifomxhtavawa" path="res://Scripts/ObstacleSpawner.gd" id="1_r150o"]
@@ -8,6 +8,13 @@
 [ext_resource type="Script" uid="uid://bfjwc4mgi0f1e" path="res://Scripts/TrailManager.gd" id="5_pbw6q"]
 [ext_resource type="Script" uid="uid://dka6p2wabk5yx" path="res://Scripts/FPS.gd" id="7_jw32o"]
 [ext_resource type="Theme" uid="uid://bckv0mj50o16f" path="res://Theme/Main.theme" id="8_50glp"]
+
+[sub_resource type="Curve" id="Curve_50glp"]
+_data = [Vector2(0, 2.5), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_50glp"]
+colors = PackedColorArray(0.862745, 0.862745, 0.862745, 1, 0.68101, 0.68101, 0.68101, 1)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jw32o"]
 lifetime_randomness = 0.2
@@ -27,7 +34,9 @@ script = ExtResource("1_rgh2o")
 
 [node name="Trail" type="Line2D" parent="."]
 width = 8.0
+width_curve = SubResource("Curve_50glp")
 default_color = Color(0.78, 0.78, 0.78, 1)
+gradient = SubResource("Gradient_50glp")
 
 [node name="SnowEmitter" type="GPUParticles2D" parent="."]
 amount = 200

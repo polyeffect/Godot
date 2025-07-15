@@ -6,7 +6,7 @@ extends Node
 
 const TRAIL_ADD_DISTANCE = 0.0
 @export var trail_update_interval:int = 2
-@export var trail_max_points:int = 100
+@export var trail_max_points:int = 55
 @export var muffler_max_points:int = 10
 var frame_counter:int = 0
 var last_pos:Vector2 = Vector2.ZERO
