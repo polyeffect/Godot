@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://drnag06n1vc6q"]
+
+[ext_resource type="Script" uid="uid://0baqdfqn6c2d" path="res://Scripts/jellybean.gd" id="1_p56e0"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jqhck"]
+radius = 0.2
+height = 0.8
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_27mj5"]
+radius = 0.2
+height = 0.8
+
+[node name="Jellybean" type="RigidBody3D"]
+script = ExtResource("1_p56e0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_jqhck")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_27mj5")

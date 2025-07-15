@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfxk603u17un6"]
+
+[ext_resource type="Script" uid="uid://b2okeml1p3aok" path="res://Scripts/main.gd" id="1_r150o"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_r150o"]
+albedo_color = Color(0.576471, 0.509804, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r150o"]
+material = SubResource("ORMMaterial3D_r150o")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_idj7w"]
+size = Vector3(2, 0, 2)
+
+[sub_resource type="Environment" id="Environment_r150o"]
+background_color = Color(0.560784, 0.898039, 0.792157, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0, 0.799644, 0.816943, 1)
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_r150o")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.72221, 2.79744)
+fov = 50.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.961727, 0.27401, 0, -0.27401, 0.961727, 0, 0, 0)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_r150o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_idj7w")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_r150o")
