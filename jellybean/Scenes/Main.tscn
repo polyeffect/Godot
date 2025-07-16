@@ -1,39 +1,60 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfxk603u17un6"]
+[gd_scene load_steps=7 format=3 uid="uid://dfxk603u17un6"]
 
 [ext_resource type="Script" uid="uid://b2okeml1p3aok" path="res://Scripts/main.gd" id="1_r150o"]
+[ext_resource type="Material" uid="uid://bkdyyir77rlyw" path="res://new_standard_material_3d.tres" id="2_idj7w"]
+[ext_resource type="Texture2D" uid="uid://b0mjqioyv5tky" path="res://citrus_orchard_road_puresky_2k.hdr" id="2_kln2b"]
 
-[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_r150o"]
-albedo_color = Color(0.576471, 0.509804, 1, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_rgh2o"]
+panorama = ExtResource("2_kln2b")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_r150o"]
-material = SubResource("ORMMaterial3D_r150o")
+[sub_resource type="Sky" id="Sky_kln2b"]
+sky_material = SubResource("PanoramaSkyMaterial_rgh2o")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_idj7w"]
-size = Vector3(2, 0, 2)
-
-[sub_resource type="Environment" id="Environment_r150o"]
-background_color = Color(0.560784, 0.898039, 0.792157, 1)
-ambient_light_source = 3
-ambient_light_color = Color(0, 0.799644, 0.816943, 1)
+[sub_resource type="Environment" id="Environment_rgh2o"]
+background_mode = 2
+background_energy_multiplier = 0.3
+sky = SubResource("Sky_kln2b")
+tonemap_mode = 2
+glow_enabled = true
+glow_strength = 1.35
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_r150o")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.72221, 2.79744)
-fov = 50.0
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rgh2o")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.961727, 0.27401, 0, -0.27401, 0.961727, 0, 0, 0)
+transform = Transform3D(0.854617, 0.312406, -0.414768, -0.0694636, 0.860372, 0.50491, 0.514591, -0.402694, 0.75699, 0, 9.71278, 0)
 shadow_enabled = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.65609, 9.75917)
+fov = 50.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = SubResource("PlaneMesh_r150o")
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_idj7w")
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.68256, 2)
+size = Vector3(4, 7.36511, 0.1)
+material = ExtResource("2_idj7w")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_r150o")
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+size = Vector3(4, 0.1, 4)
+material = ExtResource("2_idj7w")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.64301, -2)
+size = Vector3(4, 7.28601, 0.1)
+material = ExtResource("2_idj7w")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3.67114, 0)
+size = Vector3(0.1, 7.34229, 4)
+material = ExtResource("2_idj7w")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3.67474, 0)
+size = Vector3(0.1, 7.34949, 4)
+material = ExtResource("2_idj7w")
